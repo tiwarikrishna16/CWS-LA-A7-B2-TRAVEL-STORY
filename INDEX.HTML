@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive digital travel diary exploring Austria through eight cinematic scenes.">
+  <title>Wander Austria | A Digital Travel Diary</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg fixed-top diary-nav">
+    <div class="container">
+      <a class="navbar-brand brand-mark" href="#home"><span class="brand-icon">✦</span> WANDER<span>AUSTRIA</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#journey">The journey</a></li>
+          <li class="nav-item"><a class="nav-link" href="#moments">Travel moments</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About Austria</a></li>
+          <li class="nav-item"><a class="nav-link nav-cta" href="#journey">Start exploring <span>↗</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-shade"></div>
+    <div class="container hero-content">
+      <div class="eyebrow light-eyebrow"><span></span> A DIGITAL TRAVEL DIARY · 2026</div>
+      <p class="hero-kicker">A little closer to the extraordinary</p>
+      <h1>Find your own<br><em>Austria story.</em></h1>
+      <p class="hero-copy">From grand city streets to quiet alpine lakes, come along on a journey through the heart of Europe.</p>
+      <div class="d-flex flex-wrap gap-3 align-items-center mt-4">
+        <a class="btn btn-cream" href="#journey">Explore the scenes <span>↗</span></a>
+        <span class="hero-note">8 chapters <i>·</i> 1 unforgettable journey</span>
+      </div>
+    </div>
+    <div class="hero-bottom container">
+      <span>47° 33′ N &nbsp; 14° 33′ E</span>
+      <span class="scroll-cue">SCROLL TO WANDER <b>↓</b></span>
+      <span>AUSTRIA / EUROPE</span>
+    </div>
+    <div class="hero-stamp">AT<br><small>26</small></div>
+  </header>
+
+  <main>
+    <section class="intro-strip">
+      <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <p class="mb-0">A country of <strong>music, mountains, flavour</strong> and stories waiting to be found.</p>
+        <div class="mini-facts"><span>✦ 8 SCENES</span><span>✦ 90 SEC STORY</span><span>✦ AUSTRIA</span></div>
+      </div>
+    </section>
+
+    <section class="journey-section section-pad" id="journey">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="eyebrow"><span></span> THE STORYBOARD</div>
+            <h2>Choose a chapter.<br><em>Make it yours.</em></h2>
+          </div>
+          <p>Each scene is a postcard from Austria. Select a chapter to explore its place, local details and alternate travel moments.</p>
+        </div>
+
+        <div class="journey-layout">
+          <aside class="scene-sidebar">
+            <div class="sidebar-top"><span>YOUR JOURNEY</span><span id="sceneCount">01 / 08</span></div>
+            <div class="progress-track"><div id="journeyProgress"></div></div>
+            <div class="scene-list" id="sceneList" aria-label="Choose a travel scene"></div>
+            <div class="sidebar-foot"><span class="tiny-star">✳</span><span>Eight little windows<br>into Austria</span></div>
+          </aside>
+
+          <article class="scene-showcase" aria-live="polite">
+            <div class="scene-photo-wrap">
+              <img id="sceneImage" class="scene-photo" src="" alt="">
+              <div class="photo-gradient"></div>
+              <div class="photo-topline"><span id="sceneCategory">CITY GUIDE</span><span id="sceneDuration">00:08</span></div>
+              <div class="photo-caption">
+                <span id="sceneNumber">CHAPTER 01</span>
+                <h3 id="sceneTitle">Welcome to Austria</h3>
+                <p id="sceneLocation">Austria · Europe</p>
+              </div>
+              <button class="photo-next" id="nextScene" aria-label="Next scene">→</button>
+            </div>
+            <div class="scene-details">
+              <div class="scene-copy">
+                <div class="eyebrow"><span></span> THE TRAVEL NOTE</div>
+                <p id="sceneDescription"></p>
+                <div class="quote-line" id="sceneQuote"></div>
+              </div>
+              <div class="scene-options">
+                <div class="option-heading"><span>EXPLORE THIS SCENE</span><small>Pick a moment</small></div>
+                <div class="option-pills" id="optionPills"></div>
+                <div class="option-card" id="optionCard">
+                  <span class="option-label" id="optionLabel">A CLOSER LOOK</span>
+                  <h4 id="optionTitle"></h4>
+                  <p id="optionText"></p>
+                </div>
+              </div>
+            </div>
+            <div class="scene-controls">
+              <button class="text-control" id="prevScene">← Previous scene</button>
+              <div class="scene-dots" id="sceneDots"></div>
+              <button class="text-control next-control" id="nextSceneBottom">Next scene →</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="moments-section section-pad" id="moments">
+      <div class="container">
+        <div class="section-heading moments-heading">
+          <div><div class="eyebrow"><span></span> LITTLE TRAVEL MOMENTS</div><h2>Collect the <em>feeling.</em></h2></div>
+          <p>Not just places on a map. These are the small experiences that make a journey memorable.</p>
+        </div>
+        <div class="row g-3 moments-grid">
+          <div class="col-md-4"><div class="moment-card moment-one"><span>01 / SLOW DOWN</span><h3>Coffee &amp;<br>conversation.</h3><p>Take a seat in a traditional Viennese café.</p></div></div>
+          <div class="col-md-4"><div class="moment-card moment-two"><span>02 / TASTE MORE</span><h3>A sweet<br>little pause.</h3><p>Make room for strudel and Sachertorte.</p></div></div>
+          <div class="col-md-4"><div class="moment-card moment-three"><span>03 / LOOK UP</span><h3>Where the<br>mountains call.</h3><p>Breathe in the fresh air of the Alps.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section section-pad" id="about">
+      <div class="container about-inner">
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1516550893923-42d28e5677af?auto=format&fit=crop&w=1100&q=85" alt="Austrian alpine landscape">
+          <div class="image-note">A PLACE TO<br>COME BACK TO <span>✳</span></div>
+        </div>
+        <div class="about-copy">
+          <div class="eyebrow"><span></span> A NOTE BEFORE YOU GO</div>
+          <h2>Small country.<br><em>Endless wonder.</em></h2>
+          <p>Austria brings together imperial history, classical music, warm cafés, storybook villages and dramatic mountain scenery. Every region has its own rhythm—and every traveller finds a different favourite.</p>
+          <div class="about-stats">
+            <div><strong>Vienna</strong><span>Culture &amp; cafés</span></div>
+            <div><strong>Salzburg</strong><span>Music &amp; history</span></div>
+            <div><strong>Alps</strong><span>Nature &amp; adventure</span></div>
+          </div>
+          <a class="inline-link" href="#journey">REVISIT THE JOURNEY <span>↗</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing-section">
+      <div class="closing-overlay"></div>
+      <div class="container closing-content">
+        <div class="eyebrow light-eyebrow"><span></span> UNTIL THE NEXT ADVENTURE</div>
+        <h2>Keep a little<br><em>wonder with you.</em></h2>
+        <p>Thanks for travelling through Austria with us.</p>
+        <a href="#home" class="btn btn-cream">Back to the beginning ↑</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="credits">
+    <div class="container footer-inner">
+      <a class="navbar-brand brand-mark" href="#home"><span class="brand-icon">✦</span> WANDER<span>AUSTRIA</span></a>
+      <p>Created by <strong>[Drashti][Abhinav][krishna]
+      </strong> · Roll No. <strong>[34,42,15]</strong> · [A7]</p>
+      <span class="footer-credit">A DIGITAL TRAVEL DIARY · 2026</span>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
